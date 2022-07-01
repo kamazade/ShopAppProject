@@ -1,0 +1,41 @@
+@model CategoryListModel
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-9">
+                <h3 class="text-muted">Categories</h3>
+            </div>
+            <div class="col-md-3">
+                <a asp-controller ="admin" asp-action="createcategory" class="btn btn-outline-warning">Create Category</a>
+            </div>
+        </div><hr>
+        <table class="table-bordered">
+            <thead>
+                 <tr>
+                    <td style="width: 30px;">Id</td>
+                    <td style="width: 250px;">Name</td>
+                    <td style="width: 200px;"></td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var category in Model.Categories)
+                {
+                    <tr>
+                        <td class="text-center">@category.CategoryId</td>
+                        <td class="text-center">@category.Name</td>
+                         <td class="text-center">
+                            <a class="btn btn-success btn-sm mr-2 " href="/admin/categories/@category.CategoryId">Edit</a>
+                            <form method="POST" asp-controller="Admin" asp-action="DeleteCategory" style="display: inline;">
+                                <input type="hidden" name="categoryId" value="@category.CategoryId">
+                                <button type="submit" class="btn btn-danger btn-sm mr-2 " >Delete</button>
+                            </form>
+                        </td>
+                    </tr>    
+                }
+                
+            </tbody>
+
+        </table>
+    </div>
+</div>

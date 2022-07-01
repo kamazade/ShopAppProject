@@ -1,0 +1,64 @@
+@model IEnumerable<User>
+@section CssDataTable {
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css">
+}
+@section Scripts {
+    <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready( function () {
+            $('#myTable').DataTable();
+        } );
+    </script>
+}
+
+<div class="row">
+    <div class="col-md-12">
+            <h3 class="text-muted">User List</h3>
+    </div>
+    </div><hr>
+</div>
+<div class="row">
+
+    <div class="col-md-10 offset-1" >
+
+        <table class="table p-1" id="myTable">
+            <thead>
+                <tr>
+                    <th scope="col">Firs Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">UserName</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Email Confirmed</th>
+                    
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr class="@(user.EmailConfirmed?"":"bg-warning")">
+                        <td>@user.FirstName</td>
+                        <td>@user.LastName</td>
+                        <td>@user.UserName</td>
+                        <td>@user.Email</td>
+                        <td>@(user.EmailConfirmed?"Yes":"No")</td>
+                        @if(user.FirstName.ToLower()!="admin"){
+                            <td class="text-center">
+                                <a class="btn btn-success btn-sm mr-2" href="/admin/user/@user.Id">Edit</a>
+                                <form method="POST" asp-controller="Admin" asp-action="DeleteUser" style="display: inline;">
+                                    <input type="hidden" name="RoleId" value="@user.Id">
+                                    <button 
+                                    type="submit" class="btn btn-danger btn-sm mr-2 "
+                                    
+                                    >Delete</button>
+                                </form>
+                            </td>
+                        }
+                    </tr>
+                }
+            
+            </tbody>
+        </table>
+    </div>
+</div>

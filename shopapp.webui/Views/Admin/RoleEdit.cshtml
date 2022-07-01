@@ -1,0 +1,68 @@
+@model RoleDetailsModel
+<h1 class="h3">Edit Role</h1> <hr>
+<div class="row">
+    <div class="col-md-12">
+        <form asp-controller="Admin" asp-action="RoleEdit">
+            <input type="hidden" name="RoleId" value="@Model.Role.Id">
+            <input type="hidden" name="RoleName" value="@Model.Role.Name">
+            <h6 class="text muted p-1"> Add to @Model.Role.Name</h6>
+            <table class="table table-bordered table-sm">
+                @if( @Model.NonMembers.Count()==0){
+                    <tr>
+                        <td colspan="2">All users belong to role</td>
+                    </tr>
+                }else{
+                    @foreach (var user in @Model.NonMembers)
+                    {
+                        <tr>
+                            <th scope="row" style="width:20px ;">
+                                <input type="checkbox" name="IdsToAdd" value="@user.Id">
+                            </th>
+                            <td>@user.UserName</td>
+                        </tr>
+                    }
+                }
+            </table>
+            <h6 class="text muted p-1"> Remove from @Model.Role.Name</h6>
+            <table class="table table-borderless ">
+                @if( @Model.Members.Count()==0){
+                    <tr>
+                        <td colspan="2">No users belong that role</td>
+                    </tr>
+                }else{
+                    <tbody>
+                    @foreach (var user in @Model.Members)
+                    {
+                        
+                        <tr>
+                            <td scope="row" style="width:20px ;">
+                                <input type="checkbox" name="IdsToRemove" value="@user.Id">
+                            </td>
+                            <td>@user.UserName</td>
+                        </tr>
+                    }
+                    </tbody>
+                }
+            </table>
+
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn btn-info ">Save Changes</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+@section Scripts 
+{
+    <script src="/modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+}

@@ -1,0 +1,29 @@
+@model SliderModel
+
+
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+
+        @foreach (var url in Model.Urls)
+        {
+            <div class="mySlides fade">
+                <div class="numbertext">@(Model.Urls.IndexOf(url)+1) /@Model.Urls.Count()  </div>
+                <img src="~/images/@url" style="width:100%">
+                <div class="text">Caption Text</div>
+            </div>   
+       }
+
+
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+
+        <!-- The dots/circles -->
+        <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        </div>

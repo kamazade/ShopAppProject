@@ -1,0 +1,92 @@
+@model CartModel
+
+<h1 class="h3 text-muted"> Shopping Cart</h1> <hr>
+@if(Model.CartItems.Count==0){
+    <div class="row">
+        <div class="col-12">
+            <div class="alert alert-warning">
+                No Products In Cart
+            </div>
+        </div>
+    </div>
+}else{
+    <div class="row">
+        <div class="col-md-8 mt-3">
+            <div class="text-left">
+                <h4  class="text-muted">Cart Details</h4>
+            </div>
+            <table class="table table-hover ">
+                <thead>
+                    <tr>
+                        <th colspan="2" class="text-center"><i class="fas fa-chevron-down"></i></th>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.CartItems)
+                    {
+                        <tr>
+                            <td class="text-center" colspan="2"><img src="~/images/@item.ImageUrl" width="60px"></td>
+                            <td>@item.Name</td>
+                            <td>
+                                <i class="fas fa-lira-sign"></i>
+                                @item.Price 
+                            </td>
+                            <td>@item.Quantity</td>
+                            <td>
+                                <i class="fas fa-lira-sign"></i>
+                                @(item.Quantity * item.Price)
+                            </td>
+                            <td> 
+                                <form asp-controller="Cart" asp-action="RemoveFormCart" method="post">
+                                    <input type="hidden" name="productId" value="@item.ProductId">
+                                    <button class="btn btn-outline-dark btn-sm" style="border-radius:9999px;" type="submit">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+
+                                </form>
+                            
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+        <div class="col-md-4 mt-3">
+            <div class="text-left">
+                <h4 class="text-muted">Summary</h4>
+            </div>
+            <table class="table table-borderless">
+                <tbody>
+                    <tr >
+                        <th >Cart Total</th>
+                        <td>@Model.TotalPrice().ToString("c")</td>
+                    </tr>
+                    <tr >
+                        <th>Shipping</th>
+                        <td class="text-muted">Free</td>
+                    </tr>
+                    <tr >
+                        <th>Total Price</th>
+                        <td>@Model.TotalPrice().ToString("c")</td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <a href="/" class="btn btn-outline-info btn-sm">
+                                <i class="fas fa-arrow-left"></i> Countinue
+                            </a>
+                            <a href="/checkout" class="btn btn-outline-info btn-sm">
+                                <i class="fas fa-arrow-right"></i> Checkout
+                            </a>
+                        </th>
+                    </tr>
+                </tbody>             
+            </table>
+        </div>
+    </div>
+}

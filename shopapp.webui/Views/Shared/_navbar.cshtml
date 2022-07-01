@@ -1,0 +1,55 @@
+<div class="navbar bg-dark navbar-dark navbar-expand-sm" >
+    <div class="container">
+        <a href="~/" class="navbar-brand">ShopApp</a>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a href="/products"  class="nav-link">Products</a></li>
+            @if(User.Identity.IsAuthenticated){
+                @if(!User.IsInRole("Admin")){
+                    <li class="nav-item"><a asp-controller="Cart" asp-action="Index"   class="nav-link">Cart</a></li>
+                    <li class="nav-item"><a asp-controller="Cart" asp-action="OrderList"  class="nav-link">Orders</a></li>
+                }
+                @if(User.IsInRole("Admin")){
+
+                    <li class="nav-item"><a asp-controller ="admin" asp-action="productlist" class="nav-link">Admin Products</a></li>
+                    <li class="nav-item"><a asp-controller ="admin" asp-action="categorylist" class="nav-link">Admin Categories</a></li>
+                    <li class="nav-item"><a asp-controller ="admin" asp-action="RoleList" class="nav-link">Roles</a></li>
+                    <li class="nav-item"><a asp-controller ="admin" asp-action="UserList" class="nav-link">Users</a></li>
+                    <li class="nav-item"><a asp-controller ="admin" asp-action="OrderList" class="nav-link">Orders</a></li>
+                }
+            }
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            @if(User.Identity.IsAuthenticated){
+                <li class="nav-item">
+                    <a href="/account/manage"  class="nav-link"> 
+                        @User.Identity.Name
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/account/logout"  class="nav-link"> 
+                        <i class="far fa-stop-circle d-inline"></i>
+                        Logout
+                    </a>
+                </li>
+            }
+            else {
+                <li class="nav-item">
+                    <a href="/account/login"  class="nav-link">
+                        <i class="far fa-play-circle d-inline"></i>
+                        Login
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/account/register"  class="nav-link">
+                        <i class="fas fa-sign-in-alt d-inline"></i>
+                        Sign In
+                    </a>
+                </li>
+            }
+
+        </ul>
+               
+        
+        
+    </div>
+</div>

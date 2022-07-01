@@ -1,0 +1,17 @@
+
+<header>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Shop App</h1>
+            @if(TempData["Greeting"]!=null && TempData["Username"]!=null){
+                <h5 class="text-muted">@TempData["Greeting"] , @TempData["Username"]</h5>
+            }
+            @if(TempData["Info"] != null){
+              <p class="lead">@TempData["Info"]</p> 
+            }else{
+                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae porro debitis adipisci reiciendis dignissimos eaque quam mollitia ullam nobis! Voluptatibus error est quae cupiditate ea, alias debitis doloremque hic nihil.</p>
+            }   
+
+        </div>
+    </div>
+</header>

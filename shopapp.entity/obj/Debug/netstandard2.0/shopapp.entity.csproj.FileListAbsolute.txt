@@ -1,0 +1,18 @@
+C:\Users\Kamaz\Desktop\PROJE\.Net Core\Asp.Net Core Mvc\shopapp\shopapp.entity\bin\Debug\netstandard2.0\shopapp.entity.deps.json
+C:\Users\Kamaz\Desktop\PROJE\.Net Core\Asp.Net Core Mvc\shopapp\shopapp.entity\bin\Debug\netstandard2.0\shopapp.entity.dll
+C:\Users\Kamaz\Desktop\PROJE\.Net Core\Asp.Net Core Mvc\shopapp\shopapp.entity\bin\Debug\netstandard2.0\shopapp.entity.pdb
+C:\Users\Kamaz\Desktop\PROJE\.Net Core\Asp.Net Core Mvc\shopapp\shopapp.entity\obj\Debug\netstandard2.0\shopapp.entity.csprojAssemblyReference.cache
+C:\Users\Kamaz\Desktop\PROJE\.Net Core\Asp.Net Core Mvc\shopapp\shopapp.entity\obj\Debug\netstandard2.0\shopapp.entity.AssemblyInfoInputs.cache
+C:\Users\Kamaz\Desktop\PROJE\.Net Core\Asp.Net Core Mvc\shopapp\shopapp.entity\obj\Debug\netstandard2.0\shopapp.entity.AssemblyInfo.cs
+C:\Users\Kamaz\Desktop\PROJE\.Net Core\Asp.Net Core Mvc\shopapp\shopapp.entity\obj\Debug\netstandard2.0\shopapp.entity.csproj.CoreCompileInputs.cache
+C:\Users\Kamaz\Desktop\PROJE\.Net Core\Asp.Net Core Mvc\shopapp\shopapp.entity\obj\Debug\netstandard2.0\shopapp.entity.dll
+C:\Users\Kamaz\Desktop\PROJE\.Net Core\Asp.Net Core Mvc\shopapp\shopapp.entity\obj\Debug\netstandard2.0\shopapp.entity.pdb
+C:\Users\Kamaz\Desktop\ShopApp\shopapp.entity\bin\Debug\netstandard2.0\shopapp.entity.deps.json
+C:\Users\Kamaz\Desktop\ShopApp\shopapp.entity\bin\Debug\netstandard2.0\shopapp.entity.dll
+C:\Users\Kamaz\Desktop\ShopApp\shopapp.entity\bin\Debug\netstandard2.0\shopapp.entity.pdb
+C:\Users\Kamaz\Desktop\ShopApp\shopapp.entity\obj\Debug\netstandard2.0\shopapp.entity.csprojAssemblyReference.cache
+C:\Users\Kamaz\Desktop\ShopApp\shopapp.entity\obj\Debug\netstandard2.0\shopapp.entity.AssemblyInfoInputs.cache
+C:\Users\Kamaz\Desktop\ShopApp\shopapp.entity\obj\Debug\netstandard2.0\shopapp.entity.AssemblyInfo.cs
+C:\Users\Kamaz\Desktop\ShopApp\shopapp.entity\obj\Debug\netstandard2.0\shopapp.entity.csproj.CoreCompileInputs.cache
+C:\Users\Kamaz\Desktop\ShopApp\shopapp.entity\obj\Debug\netstandard2.0\shopapp.entity.dll
+C:\Users\Kamaz\Desktop\ShopApp\shopapp.entity\obj\Debug\netstandard2.0\shopapp.entity.pdb

@@ -1,0 +1,38 @@
+@model OrderListModel
+
+<div class="row">
+    <div class="col-md-10 offset-1">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width:30px ;" >OrderId</th>
+                    <th style="width:160px ;" ></th>
+                    <th >Name</th>
+                    <th style="width:120px ;">Price</th>
+                    <th style="width:120px ;">Quantity</th>
+                    <th style="width:160px ;">Order State</th>
+                </tr>
+            </thead>
+        </table>
+
+        @foreach (var item in Model.Orders)
+        {       
+            <table class="table table-bordered mb-3">
+                <tbody>
+                    @foreach (var ci in item.OrderItems)
+                    {
+                        <tr>
+                            <td style="width:30px ;" >@ci.OrderId</td>
+                            <td style="width:160px ;" ><img src="~/images/@ci.Product.ImageUrl" width="50px"></td>
+                            <td  >@ci.Product.Name</td>
+                            <td style="width:120px ;">@ci.Price</td>
+                            <td style="width:120px ;">@ci.Quantity</td>
+                            <td style="width:160px ;">@ci.Order.OrderState</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            
+        }
+    </div>
+</div>
